@@ -1,0 +1,63 @@
+Q1. Differentiate between the procedural and object-oriented programming (OOP) paradigms. Provide a real-world example to illustrate the core difference.
+
+| Procedural                | OOP                       |
+| ------------------------- | ------------------------- |
+| Function based            | Object based              |
+| Less secure               | More secure               |
+| Harder for large projects | Easier for large projects |
+| No inheritance            | Supports inheritance      |
+
+Example- 
+Procedural---- Bank balance stored separately, Functions modify it
+OOP ----- BankAccount object, balance + deposit() + withdraw()
+
+Q2.  How does Java enforce Encapsulation?
+Using:
+private variables
+getter/setter methods
+
+Example:-
+private int age;
+public void setAge(int a) {
+   age = a;
+}
+
+Q3. Whats a method?
+A method in Java is basically a function inside a class.
+It is used to perform some action.
+Example--> display function in the class. 
+And we call method in the main. 
+
+Q4.Write a Java program to define a class Circle with a constructor that initializes the radius and a method to calculate the area. 
+
+class Circle{
+    double radius; 
+    
+    Circle(double r){
+        radius = r;
+    }
+   double area() {
+
+        return 3.14 * radius * radius;
+    }
+}
+public class Main {
+
+    public static void main(String[] args) {
+
+        Circle c1 = new Circle(5);
+
+        System.out.println(c1.area());
+    }
+}
+
+Q5. Explain the difference between Type Conversion (widening) and Type Casting (narrowing) in Java by providing an example for when a cast is required.
+| Type Conversion | Type Casting  |
+| --------------- | ------------- |
+| Automatic       | Manual        |
+| Small → Large   | Large → Small |
+
+Q6. Whats this?
+this.name
+refers to: current object's variable
+
