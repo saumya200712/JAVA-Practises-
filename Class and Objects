@@ -1,0 +1,24 @@
+
+class Car{  //class created 
+    int price;    //data menbers
+    String model;
+    
+    Car(String m , int p ){  //parameterized constructor 
+        price = p;
+        model = m;
+        
+    }
+    void display(){
+         System.out.println(model + " " + price);
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+
+		Car c1 = new Car("BMW",10000000); //object created 
+		c1.display();
+		
+		
+	}
+}
