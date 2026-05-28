@@ -1,0 +1,31 @@
+Protect your data — hide it inside the class and control all access.
+
+Step 1 — Declare all fields private. 
+Step 2 — Write a public getter for each field you want to expose. 
+Step 3 — Write a public setter with validation.
+
+class Person{
+private int age;
+}
+
+Now here age is private, so we can't access it like p.age. Because data is protected.
+
+Then how do we access it?
+Using getter and setter methods.
+
+Getter = READ data
+Setter = CHANGE data
+
+Getter->
+public int  getAge() { 
+return age;
+}
+This simply gives the name of the name. 
+
+System.out.println(p.getName());
+
+Setter->
+ public String getName() { 
+return name; 
+}
+public void setName(String name)
