@@ -1,0 +1,35 @@
+One thing can behave in many forms. Person can behave differently as:
+student
+daughter
+friend
+Same person → many forms.
+
+That is polymorphism.
+
+
+class Employee {
+
+    void work() {
+
+        System.out.println("This is my work");
+    }
+}
+
+class Manager extends Employee {
+
+    @Override
+    void work() {
+
+        System.out.println("My work");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Employee e1 = new Manager();
+
+        e1.work();
+    }
+}
