@@ -1,0 +1,54 @@
+class Student {
+
+   static String college = "MNNIT";
+}
+
+Now:
+
+Student Class
+|
+|--> college = "MNNIT"
+|
+s1
+s2
+s3
+
+Only ONE copy exists.
+All objects share it.
+
+Example- to count the number of places
+
+class Place{
+    static int count = 0;
+    Place(){
+    count++;
+  }
+}
+
+public class Main{
+	public static void main(String[] args) {
+	    new Place();
+	    new Place();
+	         System.out.println(Place.count);
+    }
+
+
+Why is main() Static?
+
+public static void main(String[] args)
+
+Java starts execution from main().
+
+But before program starts: No object exists yet
+Therefore Java cannot do:
+
+Main m = new Main();
+m.main();
+
+So main() must belong to the class itself.
+
+
+
+
+
+}
