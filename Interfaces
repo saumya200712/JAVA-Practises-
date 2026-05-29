@@ -1,0 +1,54 @@
+Interface- implemnts. Solves the issue of multiple inheritance. 
+
+interface Flyable{
+    void fly();    
+}
+
+class Bird implements Flyable{
+    public void fly(){
+    System.out.println("Bird is flying");
+}
+}
+public class Main
+{
+	public static void main(String[] args) {
+		 Bird b = new Bird();
+		 b.fly();
+	}
+}
+
+
+
+A class can implement MULTIPLE interfaces. This is the way of showing multiple interface. 
+interface Eat {
+    void eat();
+}
+
+interface Sleep {
+    void sleep();
+}
+
+class Human implements Eat, Sleep {
+
+    @Override
+    public void eat() {
+        System.out.println("Human eats");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Human sleeps");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Human h = new Human();
+
+        h.sleep();
+        h.eat();
+    }
+}
+
