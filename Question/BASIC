@@ -12,9 +12,13 @@ Procedural---- Bank balance stored separately, Functions modify it
 OOP ----- BankAccount object, balance + deposit() + withdraw()
 
 Q2.  How does Java enforce Encapsulation?
-Using:
-private variables
-getter/setter methods
+
+Encapsulation in Java means bundling data (variables) and methods (functions) together in a class and restricting direct access to the data.
+Java enforces encapsulation mainly through access modifiers:-
+1. private → accessible only inside the same class.
+2. protected → accessible in the same package and subclasses.
+3. public → accessible from anywhere.
+Default (no modifier) → accessible within the same package.
 
 Example:-
 private int age;
