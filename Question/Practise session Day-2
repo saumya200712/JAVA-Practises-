@@ -1,0 +1,92 @@
+Q1. Demonstrate the use of a constructor with the this keyword to resolve ambiguity between instance variables and local method parameters.
+
+**Instance Variable**-- A variable declared inside a class but outside any method or constructor.
+
+class Student {
+    String name;   // instance variable
+}
+
+**Local Parameter**---- A parameter is a special type of local variable that exists only inside a method or constructor.
+
+Student(String name)
+Here:
+name is the constructor parameter.
+
+CODE--->
+class Student{
+    String name;
+    
+    Student(String name){
+        this.name = name;     //instance variable = parameter, this.name refers to the instance variable, while name refers to the                                        constructor parameter.
+    }
+    void display(){
+        System.out.println(name);
+    }
+}
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Student s1 = new Student("Alex");
+		s1.display();
+
+	}
+}
+
+Q2. Discuss the purpose of the break and continue statements within control flow loops in Java. When is using a break considered mandatory?
+break -- Terminates the loop immediately and transfers control to the statement after the loop.
+continue -- Skips the current iteration and moves to the next iteration.
+
+When is break mandatory?
+
+In a traditional switch statement, break is generally required to prevent 'fall-through' into the next case.
+
+switch(day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+}
+Without break, execution continues into subsequent cases.
+
+Q3.  What happens in memory when a Java array of objects is initialized versus when the objects themselves are created?
+
+ Array Creation
+Student[] students = new Student[3];
+
+Memory for an array of 3 references is allocated.
+No Student objects are created.
+Each element contains null.
+
+Object Creation
+students[0] = new Student();
+
+A Student object is created in heap memory.
+The first array element stores a reference to that object
+
+Q4. Analyze the difference between == operator and the .equals() method when comparing objects in Java
+
+| Feature  | `==`                                            | `.equals()`                             |
+| -------- | ----------------------------------------------- | --------------------------------------- |
+| Compares | References (memory addresses)                   | Object contents                         |
+| Checks   | Whether two references point to the same object | Whether two objects are logically equal |
+| Used for | Primitive values and reference comparison       | Object content comparison               |
+
+EXAMPLE-
+String s1 = new String("Java");
+String s2 = new String("Java");
+System.out.println(s1 == s2);
+System.out.println(s1.equals(s2));
+
+Output
+false
+true
+
+Explanation-
+s1 == s2 is false because they are different objects.
+s1.equals(s2) is true because both contain the same text
+
+
+
