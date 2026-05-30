@@ -1,0 +1,102 @@
+Q1. Explain Type Conversion (widening) and illustrate a situation where implicit widening from int to double occurs automatically.
+Widening is the automatic conversion of a smaller data type into a larger compatible data type.
+Example:
+int → long → float → double
+
+EXAMPLE-
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int n = 10;
+		double d = n;
+		System.out.println(d);
+
+	}
+}
+
+q2. Q19. Analyze the code block below and determine the final value of sum and why.
+int[] a = {1, 2, 3};
+int sum = 0;
+
+for(int i : a) {
+    if(i == 2)
+        continue;
+
+
+    sum += i;
+}
+
+sum = 4;
+Why?
+The continue statement skips the current iteration when i equals 2. Therefore, only 1 and 3 are added to sum.
+sum = 1 + 3 = 4
+
+Q3. A Java class contains multiple constructors. Explain how the compiler determines which constructor to execute when an object is 
+instantiated.
+Constructor Overloading
+The compiler matches the constructor call with the constructor whose parameter list (number, type, and order of parameters)
+best matches the arguments provided.
+
+  Q4. Implement a class hierarchy where Vehicle is the base class, and Car and Motorcycle are derived classes.
+Demonstrate the use of the super keyword to call the Vehicle class's parameterized constructor.
+class Vehicle{
+    String brand;
+    
+    Vehicle(String b){
+        brand = b;
+    }
+    void display(){
+        System.out.println("Brand"+brand);
+    }
+}
+class Car extends Vehicle{
+    String brand; 
+    int price;
+    
+    Car(String b, int p){
+       super(b);
+        price = p;
+    }
+}
+
+class Codechef
+{
+    public static void main(String[] args) throws java.lang.Exception
+    {
+        
+        Car c1 = new Car("BMW", 10000000);
+        c1.display();
+        
+    }
+
+
+Q5. . Explain Method Overriding. What are the rules regarding the access specifier of the overriding method compared to the
+overridden method?
+Method Overriding occurs when a subclass provides its own implementation of a method already defined in its superclass.
+EXAMPLE- 
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();
+    }
+}
+Access Specifier Rules
+The overriding method cannot have more restrictive access than the overridden method.
+
+Method overriding enables runtime polymorphism. The overriding method must have the same name, return type (or compatible return type),
+and parameter list, and its access level must be the same or less restrictive (more accessible) than that of the parent method.
