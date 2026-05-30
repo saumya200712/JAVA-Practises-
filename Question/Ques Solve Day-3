@@ -1,0 +1,97 @@
+Q1. Explain the concept of Data Abstraction in OOP. How does the use of getter and setter methods relate to this principle?
+
+Data Abstraction is the process of hiding implementation details and showing only essential features of an object to the user.
+
+Getter and Setter Methods
+Getter and setter methods help achieve abstraction by providing controlled access to private data.
+EXAMPLE-
+class Student {
+    private String name;
+
+    public void setName(String name) {  //setname
+        this.name = name;
+    }
+
+    public String getName() {        //getname
+        return name;
+    }
+}
+
+Q2. Describe the scope and lifetime difference between a variable declared inside a for loop and a variable declared outside but within the method block.
+
+for(int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+Scope: Only inside the for loop.
+Lifetime: Exists only while the loop is executing.
+Cannot be accessed outside the loop.
+
+
+Variable outside method 
+void display() {
+    int x = 10;
+
+    for(int i = 0; i < 5; i++) {
+        System.out.println(i);
+    }
+
+    System.out.println(x); // Valid
+}
+Scope: From its declaration point to the end of the method block.
+Lifetime: Exists for the entire execution of the method.
+Can be used anywhere in the method after declaration.
+
+Q3. What is the purpose of the static keyword when applied to a variable or a method? Why can a static method not access non-static instance variables?
+A static variable belongs to the class, not to individual objects.
+
+class Student {
+    static String college = "MNNIT";
+}
+Only one copy is created. Shared by all objects.
+
+Why Can't a Static Method Access Non-Static Variables?
+
+A static method cannot directly access non-static variables because non-static variables belong to specific objects, 
+while static methods do not have an associated object
+
+Q4. Demonstrate the concept of Method Overloading in Java.
+Provide a rule that must be strictly followed for the compiler to differentiate between overloaded methods.
+
+Method Overloading occurs when multiple methods have the same name but different parameter lists in the same class.
+EXAMPLE- 
+class Calculator {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+
+        System.out.println(c.add(10, 20));
+        System.out.println(c.add(10, 20, 30));
+        System.out.println(c.add(2.5, 3.5));
+    }
+}
+Rule for Method Overloading
+The compiler differentiates overloaded methods based on the method signature, which must differ in:
+
+Number of parameters, or
+Type of parameters, or
+Order of parameter types
+
+
+
+
+
+
+
+
