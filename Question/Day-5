@@ -1,0 +1,135 @@
+Q1.  What is a Marker Interface? How is it different from a regular interface?
+A Marker Interface is an interface that contains no methods or fields. It is used only to provide information (a "mark") to the JVM or
+compiler that a class has a special property.
+
+Examples: Serializable, Cloneable, Remote
+
+Purpose
+Indicates that a class possesses a particular capability.
+JVM (complier) can perform special operations based on the marker.
+
+Q2. Design a Java interface called Drawable with a default method defaultColor(). Implement this interface in two classes and show how 
+one class can override the default method.
+interface Drawable {
+    default void defaultColor() {
+        System.out.println("Default Color: Black");
+    }
+
+    void draw();
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+class Rectangle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing Rectangle");
+    }
+
+    @Override
+    public void defaultColor() {
+        System.out.println("Default Color: Blue");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        Rectangle r = new Rectangle();
+
+        c.draw();
+        c.defaultColor();
+
+        r.draw();
+        r.defaultColor();
+    }
+}
+OUTPUT--Drawing Circle
+Default Color: Black
+Drawing Rectangle
+Default Color: Blue
+
+Explanation:
+Circle uses the interface's default implementation.
+Rectangle overrides the default method and provides its own implementation.
+
+Q3. Difference Between an Abstract Class and an Abstract Method
+A class declared with the abstract keyword is called an abstract class.Cannot be instatilized 
+abstract class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+A method declared with the abstract keyword without a body.
+
+abstract class Animal {
+    abstract void sound();
+}
+Has only a declaration.
+
+Q4. Write a Java program to define a package geometry containing a class Rectangle. Demonstrate how a class outside the package can access 
+the Rectangle class using the import statement
+
+A package is used to group related classes and avoid naming conflicts.
+
+package geometry; places Rectangle inside the geometry package.
+import geometry.Rectangle; allows classes outside the package to use it.
+The class must be declared public to be accessible outside its package.
+
+package geometry;
+
+public class Rectangle {
+    int length = 10;
+    int width = 5;
+
+    public void area() {
+        System.out.println("Area = " + (length * width));
+    }
+}
+
+Access from Another Class
+
+import geometry.Rectangle;
+
+public class Main {
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle();
+        r.area();
+    }
+}
+
+Q5. Explain the purpose of Inner Classes. Under what specific scenario would a Local Inner Class be the most appropriate choice?
+
+Inner Class is a class defined inside another class.
+
+Advantages
+Improves code organization.
+Provides better encapsulation.
+Useful when a class is needed only by another class.
+
+When is a Local Inner Class Most Appropriate?
+A Local Inner Class is declared inside a method and is used only within that method.
+
+class Test {
+    void display() {
+
+        class Message {  //local inner class 
+            void show() {
+                System.out.println("Inside Local Inner Class");
+            }
+        }
+
+        Message m = new Message();
+        m.show();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.display();
+    }
+}
