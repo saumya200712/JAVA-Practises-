@@ -1,0 +1,44 @@
+Observation
+Row 1 → 1 number
+Row 2 → 2 numbers
+Row 3 → 3 numbers
+Row 4 → 4 numbers
+Numbers are consecutive.
+
+Logic
+Maintain a variable num / count = 1.
+Outer loop runs from 1 to N (rows).
+Inner loop runs from 1 to row number.
+Print num and increment it.
+
+DRY RUN-->
+i controls the rows.
+j controls how many numbers are printed in each row.
+count stores the current consecutive number.
+After printing a number, count++ increases it for the next position.
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);  //The Scanner is used to take input from the user.
+        int n = sc.nextInt();
+        int count = 1;
+        
+        for(int i =1; i<=n; i++){
+            for(int j =1;j<=i;j++){
+                
+                System.out.println(count++ + "\t");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+
+
+If not user input, so
+int n = 4;
+int count = 1;    
